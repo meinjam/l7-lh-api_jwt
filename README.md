@@ -3,11 +3,14 @@
 ## Getting Started
 ### Step 1: Install Package
 ```` composer require tymon/jwt-auth ````
-<h3>Step 2: Publish the config</h3>
-<p><code>php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"</code></p>
-<h3>Step 3: Generate secret key</h3>
-<p><code>php artisan jwt:secret</code></p>
-<h3>Step 4: Update User model App\User.php </h3>
+
+### Step 2: Publish the config
+```` php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider" ````
+
+### Step 3: Generate secret key
+```` php artisan jwt:secret ````
+
+### Step 4: Update User model App\User.php
 <p>
     <code>
         <?php
