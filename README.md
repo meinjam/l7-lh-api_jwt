@@ -8,39 +8,43 @@
 <h3>Step 3: Generate secret key</h3>
 <p><code>php artisan jwt:secret</code></p>
 <h3>Step 4: Update User model App\User.php </h3>
-<p><code>
-    <?php
+<p>
+    <code>
+        
+        <?php
 
-namespace App;
+        namespace App;
 
-use Tymon\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+        use Tymon\JWTAuth\Contracts\JWTSubject;
+        use Illuminate\Notifications\Notifiable;
+        use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements JWTSubject
-{
-    use Notifiable;
+        class User extends Authenticatable implements JWTSubject
+        {
+            use Notifiable;
 
-    // Rest omitted for brevity
+            // Rest omitted for brevity
 
-    /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
+            /**
+             * Get the identifier that will be stored in the subject claim of the JWT.
+             *
+             * @return mixed
+             */
+            public function getJWTIdentifier()
+            {
+                return $this->getKey();
+            }
 
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
-}
-</code></p>
+            /**
+             * Return a key value array, containing any custom claims to be added to the JWT.
+             *
+             * @return array
+             */
+            public function getJWTCustomClaims()
+            {
+                return [];
+            }
+        }
+        
+    </code>
+</p>
