@@ -10,7 +10,6 @@
 <h3>Step 4: Update User model App\User.php </h3>
 <p>
     <code>
-        
         <?php
 
         namespace App;
@@ -45,6 +44,5 @@
                 return [];
             }
         }
-        
     </code>
 </p>
