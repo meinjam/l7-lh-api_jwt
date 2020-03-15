@@ -46,3 +46,21 @@
         }
     </code>
 </p>
+<h3>Step 5: Configure Auth guard config/auth.php </h3>
+<p>
+    <code>
+        'defaults' => [
+        'guard' => 'api',
+        'passwords' => 'users',
+        ],
+
+        ...
+
+        'guards' => [
+            'api' => [
+                'driver' => 'jwt',
+                'provider' => 'users',
+            ],
+        ],
+    </code>
+</p>
