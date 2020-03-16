@@ -68,3 +68,23 @@ class User extends Authenticatable implements JWTSubject
 ],
 
 ````
+
+### Step 6: Add some basic authentication routes routes/api.php
+```javascript 
+
+<?php
+
+Route::group([
+
+    'prefix' => 'auth'
+
+], function () {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
+
+````
